@@ -9,12 +9,12 @@
   --maroon:#7a1414;--maroon-d:#4e0b0b;--green:#12372a;--green-l:#1f5a43;--gold:#c8921a;--gold-l:#e8c46a;
   --cream:#fbf1dc;--paper:#fff8ea;--ink:#2b1b12;--saffron:#e0802b;--blue:#1d5f86;
   --u:10px;--H:640px;
-  --fs-xs:max(11px,calc(var(--u)*1.05));
-  --fs-s:max(13px,calc(var(--u)*1.25));
-  --fs-m:max(15px,calc(var(--u)*1.5));
-  --fs-l:max(19px,calc(var(--u)*2.1));
-  --fs-xl:max(25px,calc(var(--u)*3.1));
-  --fs-xxl:max(32px,calc(var(--u)*4.4));
+  --fs-xs:max(13px,calc(var(--u)*1.2));
+  --fs-s:max(15px,calc(var(--u)*1.45));
+  --fs-m:max(17px,calc(var(--u)*1.7));
+  --fs-l:max(21px,calc(var(--u)*2.25));
+  --fs-xl:max(27px,calc(var(--u)*3.2));
+  --fs-xxl:max(34px,calc(var(--u)*4.5));
   --serif:'Cinzel',Georgia,'Times New Roman',serif;
   --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
   --script:'Cormorant Garamond',Georgia,serif;
@@ -198,8 +198,8 @@ input[type=range]{width:100%;accent-color:var(--maroon);height:calc(var(--u)*2.4
 #intro .om{font-size:70px;color:var(--gold-l);text-shadow:0 0 30px rgba(232,196,106,.7);animation:glow 3s infinite}
 #intro .logo{width:96px;height:auto;border-radius:50%;margin:0 auto 10px;display:block;box-shadow:0 0 0 3px var(--gold)}
 #intro h1{color:#ffd96b;margin:.2em 0;font-size:clamp(26px,5vw,48px)}
-#intro p{color:#f3dba0;font-size:16px;max-width:580px;margin:0 auto 1.3em;line-height:1.5}
-#intro button{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:15px;padding:14px 32px;border-radius:99px;border:2px solid var(--gold);background:linear-gradient(135deg,var(--gold),var(--gold-l));color:var(--maroon-d);cursor:pointer;margin:6px}
+#intro p{color:#f3dba0;font-size:18px;max-width:580px;margin:0 auto 1.3em;line-height:1.5}
+#intro button{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:16px;padding:14px 32px;border-radius:99px;border:2px solid var(--gold);background:linear-gradient(135deg,var(--gold),var(--gold-l));color:var(--maroon-d);cursor:pointer;margin:6px}
 #intro button.alt{background:transparent;color:var(--gold-l)}
 #lightbox{position:fixed;inset:0;z-index:600;background:rgba(10,3,3,.93);display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:16px}
 #lightbox.on{display:flex}
@@ -263,7 +263,10 @@ input[type=range]{width:100%;accent-color:var(--maroon);height:calc(var(--u)*2.4
 #toc .x{float:right;background:transparent;border:2px solid var(--gold);color:var(--gold-l);border-radius:99px;padding:6px 16px;font-family:var(--serif);cursor:pointer}
 #intro .logo{width:150px;height:auto;border-radius:50%;margin:0 auto 12px;display:block;box-shadow:0 0 0 3px var(--gold),0 0 44px rgba(232,196,106,.65);animation:glow 3s infinite;background:#fff}
 #intro::before{content:"";position:absolute;inset:4vh 0;background:var(--i-wm) center/contain no-repeat;filter:invert(1) sepia(.55);opacity:.16;pointer-events:none}
-#intro>div{position:relative}
+#intro>div{position:relative;z-index:2}
+#intro .logo{display:none}
+#intro::after{content:"";position:absolute;z-index:1;left:50%;top:50%;width:min(34vh,60vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--i-logo) center/cover no-repeat;opacity:.45;pointer-events:none}
+#intro h1,#intro .eyebrow,#intro p{text-shadow:0 2px 10px rgba(30,5,5,.85),0 0 3px rgba(30,5,5,.8)}
 .wm{opacity:.18}
 .portrait .tiles,.portrait .pillar-p{grid-template-columns:1fr 1fr}
 .portrait .pg,.portrait .fin-h ul{grid-template-columns:1fr;columns:1}
@@ -274,7 +277,7 @@ input[type=range]{width:100%;accent-color:var(--maroon);height:calc(var(--u)*2.4
 :root{--u:clamp(8.8px,.45vw + 5.4px,11.6px);--H:700px}
 body{background:var(--paper);min-height:100vh}
 .top{position:fixed;top:0;left:0;right:0;height:64px;z-index:80;display:flex;align-items:center;gap:16px;padding:0 70px 0 18px;background:linear-gradient(135deg,var(--maroon-d),var(--maroon));border-bottom:3px solid var(--gold);color:#ffe9a8}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;font-size:14px;letter-spacing:.06em;white-space:nowrap;cursor:pointer;color:#ffd96b;background:none;border:0}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;font-size:15px;letter-spacing:.06em;white-space:nowrap;cursor:pointer;color:#ffd96b;background:none;border:0}
 .brand img{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
 .spage{display:none;position:relative;min-height:100vh;padding-top:64px}
 .spage.on{display:block}
@@ -282,7 +285,7 @@ body{background:var(--paper);min-height:100vh}
 .spage .wm{background-size:auto min(72vh,78vw)}
 .sc{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:calc(var(--u)*3.2) calc(var(--u)*3) calc(var(--u)*2)}
 .pager{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 calc(var(--u)*3) calc(var(--u)*4);display:flex;justify-content:space-between;gap:12px}
-.pager button{font-family:var(--serif);font-weight:700;font-size:13px;letter-spacing:.1em;border:2px solid var(--gold);background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#ffe9a8;padding:12px 24px;border-radius:99px;cursor:pointer}
+.pager button{font-family:var(--serif);font-weight:700;font-size:14.5px;letter-spacing:.1em;border:2px solid var(--gold);background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#ffe9a8;padding:12px 24px;border-radius:99px;cursor:pointer}
 .pager button:hover{filter:brightness(1.25)}.pager .sp{visibility:hidden}
 .spage.on .sc,.spage.on .pager{animation:fadein .6s}
 /* mobile short nav labels */
@@ -295,26 +298,26 @@ body{background:var(--paper);min-height:100vh}
  .top{padding-right:64px}
  .pager{padding-bottom:calc(var(--u)*4 + 60px)}
 }
-@media (max-width:560px){.pdays{grid-template-columns:1fr}.cd div{min-width:calc(var(--u)*7)}.top{padding-right:64px}}
+@media (max-width:560px){.pdays{grid-template-columns:1fr}.cd div{min-width:calc(var(--u)*7)}.top{padding-right:64px}.pager{flex-wrap:wrap}.pager button{padding:12px 16px;font-size:13.5px;letter-spacing:.06em;max-width:100%}}
 
 body.site .spage .wm{position:fixed;inset:auto;top:calc(64px + 8vh);bottom:8vh;left:10vw;right:10vw;background-size:contain;background-position:center;background-repeat:no-repeat;opacity:.17}
 body.site .spage:first-of-type .wm{opacity:.2}
 .nav{display:flex;align-items:center;gap:2px;margin-left:auto;margin-right:6px}
 .grp{position:relative}
-.gb{font-family:var(--serif);font-weight:700;font-size:12px;letter-spacing:.07em;color:#f3dba0;background:transparent;border:0;border-bottom:3px solid transparent;padding:21px 11px 18px;cursor:pointer;white-space:nowrap}
+.gb{font-family:var(--serif);font-weight:700;font-size:13.5px;letter-spacing:.06em;color:#f3dba0;background:transparent;border:0;border-bottom:3px solid transparent;padding:21px 11px 18px;cursor:pointer;white-space:nowrap}
 .gb:hover{color:#fff}.gb.on{color:#ffd96b;border-bottom-color:var(--gold-l)}
 .dd{display:none;position:absolute;top:100%;left:0;min-width:270px;background:var(--maroon-d);border:2px solid var(--gold);border-top:0;border-radius:0 0 10px 10px;padding:6px;box-shadow:0 12px 24px rgba(0,0,0,.4)}
 .grp:hover .dd,.grp.open .dd{display:block}
-.dd button{display:block;width:100%;text-align:left;font-family:var(--body);font-weight:600;font-size:14px;color:#f3dba0;background:transparent;border:0;border-radius:6px;padding:10px 12px;cursor:pointer}
+.dd button{display:block;width:100%;text-align:left;font-family:var(--body);font-weight:600;font-size:15.5px;color:#f3dba0;background:transparent;border:0;border-radius:6px;padding:10px 12px;cursor:pointer}
 .dd button:hover{background:rgba(232,196,106,.15);color:#fff}.dd button.on{color:#ffd96b;background:rgba(232,196,106,.12)}
 #burger{display:none;margin-left:auto;font-size:22px;width:44px;height:44px;border:2px solid var(--gold);border-radius:10px;background:transparent;color:#ffe9a8;cursor:pointer}
-@media (max-width:1120px){
+@media (max-width:1260px){
  #burger{display:block}
  .nav{position:fixed;top:64px;left:0;right:0;bottom:0;margin:0;display:none;flex-direction:column;gap:0;background:rgba(40,8,8,.98);padding:10px 18px 40px;overflow:auto;z-index:85}
  body.menu-open .nav{display:flex}
- .gb{width:100%;text-align:left;font-size:14px;padding:14px 4px;border-bottom:1px solid rgba(232,196,106,.35)}
+ .gb{width:100%;text-align:left;font-size:15.5px;padding:14px 4px;border-bottom:1px solid rgba(232,196,106,.35)}
  .dd{display:block;position:static;border:0;box-shadow:none;background:transparent;padding:0 0 6px 14px;min-width:0}
- .dd button{font-size:15px}
+ .dd button{font-size:16.5px}
 }
 @media (max-width:900px){
  body.site .tiles,body.site .pillar-p{grid-template-columns:1fr 1fr}
@@ -330,7 +333,7 @@ body.site .spage:first-of-type .wm{opacity:.2}
  <button id="enterSound">ENTER WITH MUSIC ♪</button><button id="enterSilent" class="alt">ENTER WITHOUT MUSIC</button>
 </div></div>
 <button id="mute" aria-label="Toggle music" title="Music on / off">♪</button>
-<div id="lightbox"><img alt=""><button id="lbp" aria-label="Previous picture">‹</button><button id="lbn" aria-label="Next picture">›</button><div id="lbc"></div></div><header class="top"><button class="brand"><img data-img="logo" alt="A2N logo"><span>ARUNACHALA ATMANIVAS</span></button><button id="burger" aria-label="Menu">☰</button><nav class="nav" id="nav"><div class="grp"><button class="gb" data-go="0">HOME</button></div><div class="grp"><button class="gb" data-grp>MANDIR ▾</button><div class="dd"><button data-go="1">Sarvamangala Devi</button><button data-go="2">Progress · Divine Arrival</button><button data-go="3">Progress · Site & Community</button></div></div><div class="grp"><button class="gb" data-grp>A2N ▾</button><div class="dd"><button data-go="4">Sanctuary</button><button data-go="5">Own a Legacy</button><button data-go="6">Sustainability</button></div></div><div class="grp"><button class="gb" data-go="7">ACTIVITIES</button></div><div class="grp"><button class="gb" data-go="8">SOCIAL SERVICE</button></div><div class="grp"><button class="gb" data-go="9">FINANCIAL SERVICES</button></div><div class="grp"><button class="gb" data-go="10">PARTICIPATE</button></div></nav></header><main><section class="spage" id="p1"><div class="wash"></div><div class="wm" style="--logo:var(--i-wm)"></div><div class="wm" style="--logo:var(--i-logo);background-size:auto min(34vh,34vw);background-position:center;opacity:.3"></div><div class="sc" style="padding-top:clamp(140px,calc(8vh + (84vh - 64px)*.31),340px)"><div class="pc">
+<div id="lightbox"><img alt=""><button id="lbp" aria-label="Previous picture">‹</button><button id="lbn" aria-label="Next picture">›</button><div id="lbc"></div></div><header class="top"><button class="brand"><img data-img="logo" alt="A2N logo"><span>ARUNACHALA ATMANIVAS</span></button><button id="burger" aria-label="Menu">☰</button><nav class="nav" id="nav"><div class="grp"><button class="gb" data-go="0">HOME</button></div><div class="grp"><button class="gb" data-grp>MANDIR ▾</button><div class="dd"><button data-go="1">Sarvamangala Devi</button><button data-go="2">Progress · Divine Arrival</button><button data-go="3">Progress · Site & Community</button></div></div><div class="grp"><button class="gb" data-grp>A2N ▾</button><div class="dd"><button data-go="4">Sanctuary</button><button data-go="5">Own a Legacy</button><button data-go="6">Sustainability</button></div></div><div class="grp"><button class="gb" data-go="7">ACTIVITIES</button></div><div class="grp"><button class="gb" data-go="8">SOCIAL SERVICE</button></div><div class="grp"><button class="gb" data-go="9">FINANCIAL SERVICES</button></div><div class="grp"><button class="gb" data-go="10">PARTICIPATE</button></div></nav></header><main><section class="spage" id="p1"><div class="wash"></div><div class="wm" style="--logo:var(--i-wm)"></div><div class="wm" style="--logo:var(--i-logo);background-size:auto min(34vh,34vw);background-position:center;opacity:.4"></div><div class="sc" style="padding-top:clamp(140px,calc(8vh + (84vh - 64px)*.31),340px)"><div class="pc">
 <div class="cols">
  <div class="stack">
   <div class="eyebrow">Vedanagari Ashram · Tiruvannamalai</div>
