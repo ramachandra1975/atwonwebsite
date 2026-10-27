@@ -210,6 +210,11 @@ input[type=range]{width:100%;accent-color:var(--maroon);height:calc(var(--u)*2.4
 .wm{position:absolute;inset:0;background-image:var(--logo);background-repeat:no-repeat;background-position:center;opacity:.17;mix-blend-mode:multiply;pointer-events:none}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}.house,.blocks i{opacity:1;transform:none}.bar .fl{transition:none}}
 
+
+/* backdrops: whole picture always visible (never cropped), soft blurred fill behind it */
+.bg{background:none!important;filter:none!important;transform:none!important;overflow:hidden}
+.bg::before{content:"";position:absolute;inset:-6%;background:var(--img) center/cover no-repeat;filter:blur(22px) saturate(1.1)}
+.bg::after{content:"";position:absolute;inset:0;background:var(--img) center/contain no-repeat;filter:blur(var(--bl,0px))}
 /* ---------- v2 additions ---------- */
 .fig-lg figure.frame img{max-height:none}
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*.8)}
@@ -292,6 +297,8 @@ body{background:var(--paper);min-height:100vh}
 }
 @media (max-width:560px){.pdays{grid-template-columns:1fr}.cd div{min-width:calc(var(--u)*7)}.top{padding-right:64px}}
 
+body.site .spage .wm{position:fixed;inset:auto;top:calc(64px + 8vh);bottom:8vh;left:10vw;right:10vw;background-size:contain;background-position:center;background-repeat:no-repeat;opacity:.17}
+body.site .spage:first-of-type .wm{opacity:.2}
 .nav{display:flex;align-items:center;gap:2px;margin-left:auto;margin-right:6px}
 .grp{position:relative}
 .gb{font-family:var(--serif);font-weight:700;font-size:12px;letter-spacing:.07em;color:#f3dba0;background:transparent;border:0;border-bottom:3px solid transparent;padding:21px 11px 18px;cursor:pointer;white-space:nowrap}
@@ -323,7 +330,7 @@ body{background:var(--paper);min-height:100vh}
  <button id="enterSound">ENTER WITH MUSIC ♪</button><button id="enterSilent" class="alt">ENTER WITHOUT MUSIC</button>
 </div></div>
 <button id="mute" aria-label="Toggle music" title="Music on / off">♪</button>
-<div id="lightbox"><img alt=""><button id="lbp" aria-label="Previous picture">‹</button><button id="lbn" aria-label="Next picture">›</button><div id="lbc"></div></div><header class="top"><button class="brand"><img data-img="logo" alt="A2N logo"><span>ARUNACHALA ATMANIVAS</span></button><button id="burger" aria-label="Menu">☰</button><nav class="nav" id="nav"><div class="grp"><button class="gb" data-go="0">HOME</button></div><div class="grp"><button class="gb" data-grp>MANDIR ▾</button><div class="dd"><button data-go="1">Sarvamangala Devi</button><button data-go="2">Progress · Divine Arrival</button><button data-go="3">Progress · Site & Community</button></div></div><div class="grp"><button class="gb" data-grp>A2N ▾</button><div class="dd"><button data-go="4">Sanctuary</button><button data-go="5">Own a Legacy</button><button data-go="6">Sustainability</button></div></div><div class="grp"><button class="gb" data-go="7">ACTIVITIES</button></div><div class="grp"><button class="gb" data-go="8">SOCIAL SERVICE</button></div><div class="grp"><button class="gb" data-go="9">FINANCIAL SERVICES</button></div><div class="grp"><button class="gb" data-go="10">PARTICIPATE</button></div></nav></header><main><section class="spage" id="p1"><div class="bg" style="--img:var(--i-hero);background-position:center;--bl:3px;--bo:0.2"></div><div class="wash"></div><div class="wm"></div><div class="sc"><div class="pc">
+<div id="lightbox"><img alt=""><button id="lbp" aria-label="Previous picture">‹</button><button id="lbn" aria-label="Next picture">›</button><div id="lbc"></div></div><header class="top"><button class="brand"><img data-img="logo" alt="A2N logo"><span>ARUNACHALA ATMANIVAS</span></button><button id="burger" aria-label="Menu">☰</button><nav class="nav" id="nav"><div class="grp"><button class="gb" data-go="0">HOME</button></div><div class="grp"><button class="gb" data-grp>MANDIR ▾</button><div class="dd"><button data-go="1">Sarvamangala Devi</button><button data-go="2">Progress · Divine Arrival</button><button data-go="3">Progress · Site & Community</button></div></div><div class="grp"><button class="gb" data-grp>A2N ▾</button><div class="dd"><button data-go="4">Sanctuary</button><button data-go="5">Own a Legacy</button><button data-go="6">Sustainability</button></div></div><div class="grp"><button class="gb" data-go="7">ACTIVITIES</button></div><div class="grp"><button class="gb" data-go="8">SOCIAL SERVICE</button></div><div class="grp"><button class="gb" data-go="9">FINANCIAL SERVICES</button></div><div class="grp"><button class="gb" data-go="10">PARTICIPATE</button></div></nav></header><main><section class="spage" id="p1"><div class="bg" style="--img:var(--i-hero);background-position:center;--bl:3px;--bo:0.08"></div><div class="wash"></div><div class="wm"></div><div class="sc"><div class="pc">
 <div class="cols">
  <div class="stack">
   <div class="eyebrow">Vedanagari Ashram · Tiruvannamalai</div>
